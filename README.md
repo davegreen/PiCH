@@ -1,16 +1,16 @@
-Readme - PiCH
+PiCH
 ====================
 
 Description
 ---------------------
-PiCentralHeating - The software component for a central heating 
-system controller, designed to run on the Raspberry Pi.
+PiCentralHeating - A central heating system 
+controller, designed to run on the Raspberry Pi.
 
-This software is written in a couple of parts. The base of the software is written in Python, this 
-portion deals with the core functionality of the system. The second part is a web interface written 
-in PHP. This part of the software deals primarily with the user interface and management of the system.
+This software is written in a couple of different pieces. The first piece is written in Python and deals with core 
+functionality, like reading and logging temperature. The second part is a web interface written in PHP and deals 
+primarily with the user interface and management of the system.
 
-If you have any improvements at all, please go ahead, then submit a pull request!
+If you have any improvements at all please go ahead and make them, then submit a pull request!
 If you can't do that, at least [let us know](https://github.com/davegreen/PiCH/tree/master#contact) what you would like to see.
 
 ### Core functionality (Python)
