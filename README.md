@@ -27,6 +27,13 @@ If you can't do that, at least [let us know](https://github.com/davegreen/PiCH/t
 - Scheduling and rule creation for heating system control.
 - Easy management of other system settings and features.
 
+TODO
+---------------------
+- This README
+- Update Bootstrap to the latest version
+- Centralise the settings pieces
+- Validate the setup parts.
+
 Setting Up
 ---------------------
 
