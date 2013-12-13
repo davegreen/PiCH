@@ -34,6 +34,10 @@ chmod +x /usr/bin/rpi-update
 echo "Updating RaspberryPi firmware using the rpi-update tool."
 rpi-update
 
+echo "Adding 1-Wire bus modules to /etc/modules so that things work on boot."
+echo "w1-gpio" >> /etc/modules
+echo "w1-therm" >> /etc/modules
+
 #PiCH bootscript needs to be run as sudo for inital setup each boot.
 
 echo "Setup done! If there were no errors, reboot the pi to complete setup."
