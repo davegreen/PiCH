@@ -29,10 +29,7 @@ If you can't do that, at least [let us know](https://github.com/davegreen/PiCH/t
 
 TODO
 ---------------------
-- This README
-- Update Bootstrap to the latest version
-- Centralise the settings pieces
-- Validate the setup parts.
+See the wiki page: https://github.com/davegreen/PiCH/wiki/TODO
 
 Setting Up
 ---------------------
