@@ -27,18 +27,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-        <?php 
-          $status = $database->checkStatus(); 
-          if ($status['status'] == true)
-          {
-            print "<a class='navbar-brand'>PiCH: ON (" . date("H:i",strtotime($status['timestamp'])) . ")</a>";
-          }
-
-          else
-          {
-            print "<a class='navbar-brand'>PiCH: OFF (" . date("H:i",strtotime($status['timestamp'])) . ")</a>";
-          }
-          ?>
+	  <a class='navbar-brand'>PiCH</a>
     </div>
 	<!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -54,13 +43,15 @@
 	  <ul class="nav navbar-nav navbar-right">
         <li><a href="#">
 		<?php
+		$status = $database->checkStatus();
 		if ($status['status'] == true)
         {
-		  print "Heating: ON";
+		  print "Heating <strong>ON</strong> since " . date("H:i",strtotime($status['timestamp']));
 		}
+
 		else
 		{
-		  print "Heating: OFF";
+		  print "Heating <strong>OFF</strong> since " . date("H:i",strtotime($status['timestamp']));
 		}
 		?>
 		</a></li>
