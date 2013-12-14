@@ -54,24 +54,21 @@ else
   if ($sensors)
   {
     print "<h1>Heating: OFF</h1>";
-    print "<table class='table table-striped table-hover'>";
-    print "<tr><td>Target a temperature for a number of minutes</td>";
-    print "<td><form class='form-inline' method='post' action='". $_SERVER['PHP_SELF']. "'>";
-    print "<div class='input-prepend input-append'><span class='add-on'>Sensor</span><select name='sensor' class='input-medium'>";
+    
+    print "Target a temperature for a number of minutes";
+    print "<form role='form' method='post' action='". $_SERVER['PHP_SELF']. "'>";
+    print "<div class='form-group'><label class='control-label'>Sensor</label><div class='col-xs-2'><select class='form-control' name='sensor'>";
     
     foreach ($sensors as $sensor)
     {
       print "<option value=". $sensor['uid'] .">". $sensor['friendlyname'] ."</option>";
     }
     
-    print "</select></div></td><td><div class='input-prepend input-append'><span class='add-on'>Temp</span>";
-    print "<input class='input-mini' type='number' name='targettemp' min='5' max='30' step='0.1' value='15'>";
-    print "<span class='add-on'>&deg;C</span></div></td><td>";
-    print "<div class='input-prepend input-append'><span class='add-on'>Time</span>";
-    print "<input type='number' class='input-mini' name='time' min='30' max='300' step='5' value='30'>";
-    print "<span class='add-on'>Minutes</span></td><td><input type='hidden' name='status' value='1'>";
-    print "<input type='submit' class='btn btn-success' value='Turn On' /></td></tr>";
-    print "</table></form>";
+    print "</select></div></div><div class='form-group'><label class='control-label'>Temp (&deg;C)</label>";
+    print "<div class='col-xs-2'><input class='form-control' placeholder='.col-xs-2' type='number' name='targettemp' min='5' max='30' step='0.1' value='15'></div></div>";
+    print "<div class='form-group'><label class='control-label'>Time (Mins)</label>";
+    print "<div class='col-xs-2'><input type='number' class='form-control' placeholder='.col-xs-2' name='time' min='30' max='300' step='5' value='30'></div></div>";
+    print "<input type='hidden' name='status' value='1'><input type='submit' class='btn btn-success' value='Turn On' /></form>";
   }
 }
 print "<h2>Sensors</h2>";
