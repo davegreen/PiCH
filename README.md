@@ -19,7 +19,7 @@ If you can't do that, at least [let us know](https://github.com/davegreen/PiCH/t
 - Manages the heating system, turning the boiler on and off to keep to the target temperature.
 - Displays the temp (in degrees centigrade) to one decimal place on 3 7-segment LED displays (e.g. 19.8)
 
-### Web interface (PHP)
+### Web interface
 
 - Display current and historical temperature data in the web interface.
 - Allow management and naming of the temperature sensors plugged in.
