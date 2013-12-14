@@ -38,3 +38,5 @@ Contact
 
 Thanks
 ---------------------
+- [Bootstrap](https://github.com/twbs/bootstrap) - For making things look good.
+- [WiringPi](https://github.com/WiringPi) - For making it easy to use the GPIO pins.
