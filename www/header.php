@@ -31,12 +31,12 @@
           $status = $database->checkStatus(); 
           if ($status['status'] == true)
           {
-            print "<a class='brand'>PiCH: ON (" . date("H:i",strtotime($status['timestamp'])) . ")</a>";
+            print "<a class='navbar-brand'>PiCH: ON (" . date("H:i",strtotime($status['timestamp'])) . ")</a>";
           }
 
           else
           {
-            print "<a class='brand'>PiCH: OFF (" . date("H:i",strtotime($status['timestamp'])) . ")</a>";
+            print "<a class='navbar-brand'>PiCH: OFF (" . date("H:i",strtotime($status['timestamp'])) . ")</a>";
           }
           ?>
     </div>
