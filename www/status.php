@@ -19,7 +19,7 @@ if (isset($_POST['status']))
   }
 }
 
-print "<h2>Sensors</h2>";
+print "<div class='container'><h2>Sensors</h2>";
 print "<table class='table table-striped table-hover table-condensed table-responsive'>";
 print "<tr><th>Name</th><th>Temp. (&deg;C)</th></tr>";
 $currenttemps = $database->getCurrentSensorData();
