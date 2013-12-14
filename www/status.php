@@ -19,6 +19,25 @@ if (isset($_POST['status']))
   }
 }
 
+print "<h2>Sensors</h2>";
+print "<table class='table table-striped table-hover table-condensed table-responsive'>";
+print "<tr><th>Name</th><th>Temp. (&deg;C)</th></tr>";
+$currenttemps = $database->getCurrentSensorData();
+
+if ($currenttemps)
+{
+  foreach ($currenttemps as $temp)
+  {
+    print "<tr><td>".$temp['friendlyname']."</td><td>".$temp['temperature']."</td></tr>";
+  }
+}
+
+else
+{
+  print "<tr><td>No sensors defined or enabled.</td><td>N/A</td></tr>";
+}
+
+print "</table>Last Updated: " .date("H:i",strtotime($temp['timestamp']));
 print "<div class='container'>";
 
 if ($status['status'] == true)
@@ -68,24 +87,6 @@ else
     print "<input type='hidden' name='status' value='1'><input type='submit' class='btn btn-success' value='Turn On' /></form>";
   }
 }
-print "<h2>Sensors</h2>";
-print "<table class='table table-striped table-hover'>";
-$currenttemps = $database->getCurrentSensorData();
-
-if ($currenttemps)
-{
-  foreach ($currenttemps as $temp)
-  {
-    print "<tr><td>".$temp['friendlyname']."</td><td>".$temp['temperature']."&deg;C</td></tr>";
-  }
-}
-
-else
-{
-  print "<tr><td>No sensors defined or enabled.</td><td>N/A</td></tr>";
-}
-
-print "</table>Last Updated: " .date("H:i",strtotime($temp['timestamp']));
 ?>
 </div> <!-- /container -->
 <?php require "footer.php"; ?>
