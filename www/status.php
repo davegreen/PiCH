@@ -23,7 +23,6 @@ print "<div class='container'>";
 
 if ($status['status'] == true)
 {
-  print "<h1>Heating: ON</h1>";
   $activeschedule = $database->getCurrentSchedule();
   
   if ($activeschedule)
@@ -53,8 +52,6 @@ else
 
   if ($sensors)
   {
-    print "<h1>Heating: OFF</h1>";
-    
     print "Target a temperature for a number of minutes";
     print "<form role='form' method='post' action='". $_SERVER['PHP_SELF']. "'>";
     print "<div class='form-group'><label class='control-label'>Sensor</label><div class='col-xs-2'><select class='form-control' name='sensor'>";

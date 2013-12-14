@@ -51,5 +51,19 @@
           <li <?php if($page == "Log"){print "class='active'";} ?>><a href="log.php">Log</a></li>
         </li>
       </ul>
+	  <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">
+		<?php
+		if ($status['status'] == true)
+        {
+		  print "Heating: ON";
+		}
+		else
+		{
+		  print "Heating: OFF";
+		}
+		?>
+		</a></li>
+	  </ul>
     </div><!-- /.navbar-collapse -->
     </nav>
