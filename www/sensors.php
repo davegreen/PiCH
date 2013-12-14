@@ -27,33 +27,35 @@ require "header.php";
 
   if ($sensors)
   {
-    print "<table class='table table-striped table-hover'>";
+    print "<table class='table table-hover table-condensed table-responsive'>";
 
     foreach ($sensors as $sensor)
     {
-      print "<tr><td>".$sensor['uid']."</td>";
-      print "<form method='post' action='". $_SERVER['PHP_SELF']. "'>";
-      print "<input type='hidden' name='sensorid' value='". $sensor['uid'] ."'>";
-      print "<td><div class='input-prepend input-append'><span class='add-on'>Name</span>";
-      print "<input type='text' name='sensorname' value='". $sensor['friendlyname'] ."'></div></td>";
-      print "<td><div class='input-prepend input-append'><span class='add-on'>Offset Value</span>";
-      print "<input type='number' name='offset' value='". $sensor['offset'] ."'></div></td>";
-      print "<td><button class='btn btn-success' type='submit'>Update</button></td></form>";      
-
-      if ($sensor['enabled'] == 0)
-      {
-        print "<td><form method='post' action='". $_SERVER['PHP_SELF']. "'>";
+	  
+	  
+	  if ($sensor['enabled'])
+	  {
+	    print "<tr class='success'>";
+		print "<td><form method='post' action='". $_SERVER['PHP_SELF']. "'>";
         print "<input type='hidden' name='sensorid' value='". $sensor['uid'] ."'>";
-        print "<button class='btn btn-success btn-block' type='submit'>Enable</button></form></div></td></tr>";
-      }
-
-      else
-      {
-        print "<td><form method='post' action='". $_SERVER['PHP_SELF']. "'>";
+        print "<button class='btn btn-danger btn-block' type='submit'>Disable</button></form></td>";
+	  }
+	  
+	  else
+	  {
+	    print "<tr class='danger'>";
+		print "<td><form method='post' action='". $_SERVER['PHP_SELF']. "'>";
         print "<input type='hidden' name='sensorid' value='". $sensor['uid'] ."'>";
-        print "<button class='btn btn-warning btn-block' type='submit'>Disable</button></form></td></div></tr>";
-      }
+        print "<button class='btn btn-success btn-block' type='submit'>Enable</button></form></div></td>";
+	  }
+	  
+      print "<form method='post' action='". $_SERVER['PHP_SELF']. "'><td><button class='btn btn-success' type='submit'>Update</button></td>";
+      print "<td>Sensor: ".$sensor['uid']."</td><input type='hidden' name='sensorid' value='". $sensor['uid'] ."'>";
+      print "<td>Name: <input type='text' name='sensorname' value='". $sensor['friendlyname'] ."'></div></td>";
+      print "<td>Temp. Offset: <input type='number' name='offset' value='". $sensor['offset'] ."'></div></td></form></tr>";
     }
+	
+	print "</table>";
   }
 
   else
@@ -61,6 +63,5 @@ require "header.php";
     print "<p>No sensors defined or enabled.</p>";
   }
   ?>
-  </table>
 </div> <!-- /container --> 
 <?php require "footer.php"; ?>
