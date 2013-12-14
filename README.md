@@ -1,11 +1,10 @@
 PiCH
 ====================
-
-Description
----------------------
 PiCentralHeating - A combo hardware/software project for a central 
 heating system controller, designed to run on the Raspberry Pi.
 
+Description
+---------------------
 This software is written in a couple of different pieces. The first piece is written in Python and deals with core 
 functionality, like reading and logging temperature. The second part is a web interface written in PHP and deals 
 primarily with the user interface and management of the system.
