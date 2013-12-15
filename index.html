@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Pich by davegreen</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Pich</h1>
+        <p>PiCentralHeating - A combo hardware/software project for a central heating system controller, designed to run on the Raspberry Pi.</p>
+
+        <p class="view"><a href="https://github.com/davegreen/PiCH">View the Project on GitHub <small>davegreen/PiCH</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/davegreen/PiCH/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/davegreen/PiCH/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/davegreen/PiCH">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="pich" class="anchor" href="#pich"><span class="octicon octicon-link"></span></a>PiCH</h1>
+
+<p>PiCentralHeating - A combo hardware/software project for a central 
+heating system controller, designed to run on the Raspberry Pi.</p>
+
+<h2>
+<a name="description" class="anchor" href="#description"><span class="octicon octicon-link"></span></a>Description</h2>
+
+<p>This software is written in a couple of different pieces. The first piece is written in Python and deals with core 
+functionality, like reading and logging temperature. The second part is a web interface written in PHP and deals 
+primarily with the user interface and management of the system.</p>
+
+<p>If you have any improvements at all please go ahead and make them, then submit a pull request!
+If you can't do that, at least <a href="https://github.com/davegreen/PiCH/tree/master#contact">let us know</a> what you would like to see.</p>
+
+<h3>
+<a name="core-functionality-python" class="anchor" href="#core-functionality-python"><span class="octicon octicon-link"></span></a>Core functionality (Python)</h3>
+
+<ul>
+<li>Reads data from the temperature sensors.</li>
+<li>Writes information about the sensors and temperature to a MySQL database.</li>
+<li>Manages the heating system, turning the boiler on and off to keep to the target temperature.</li>
+<li>Displays the temp (in degrees centigrade) to one decimal place on 3 7-segment LED displays (e.g. 19.8)</li>
+</ul><h3>
+<a name="web-interface" class="anchor" href="#web-interface"><span class="octicon octicon-link"></span></a>Web interface</h3>
+
+<ul>
+<li>Display current and historical temperature data in the web interface.</li>
+<li>Allow management and naming of the temperature sensors plugged in.</li>
+<li>Scheduling and rule creation for heating system control.</li>
+<li>Easy management of other system settings and features.</li>
+</ul><h2>
+<a name="todo" class="anchor" href="#todo"><span class="octicon octicon-link"></span></a>TODO</h2>
+
+<p>See the wiki page: <a href="https://github.com/davegreen/PiCH/wiki/TODO">https://github.com/davegreen/PiCH/wiki/TODO</a></p>
+
+<h2>
+<a name="setting-up" class="anchor" href="#setting-up"><span class="octicon octicon-link"></span></a>Setting Up</h2>
+
+<h2>
+<a name="contact" class="anchor" href="#contact"><span class="octicon octicon-link"></span></a>Contact</h2>
+
+<h2>
+<a name="thanks" class="anchor" href="#thanks"><span class="octicon octicon-link"></span></a>Thanks</h2>
+
+<ul>
+<li>
+<a href="https://github.com/twbs/bootstrap">Bootstrap</a> - For making things look good.</li>
+<li>
+<a href="https://github.com/WiringPi">WiringPi</a> - For making it easy to use the GPIO pins.</li>
+</ul>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/davegreen">davegreen</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
