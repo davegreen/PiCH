@@ -10,7 +10,10 @@ echo "System update complete."
 
 echo "Installing prerequisites".
 apt-get install -y git python-pip python-dev python-imaging python-mysqldb mysql-server lighttpd php5-cgi phpmyadmin
-cd ~/
+
+mkdir pich
+cd pich
+
 git clone git://github.com/doceme/py-spidev
 cd py-spidev/
 python setup.py install
@@ -19,7 +22,7 @@ cd ..
 rm -Rf py-spidev/
 
 git clone git://git.drogon.net/wiringPi
-cd wiringPi
+cd wiringPi/
 ./build
 cd ..
 rm -Rf wiringPi/
