@@ -1,7 +1,23 @@
 PiCH
 ====================
-PiCentralHeating - A combo hardware/software project for a central 
+PiCentralHeating - A combo hardware/software project for a low cost central 
 heating system controller, designed to run on the Raspberry Pi.
+
+Objectives
+---------------------
+Our key objectives of the PiCH project are 
+
+To be able to control your heating from anywhere and
+Being able to define which area you want to be heat at a given time.
+
+Obviously there are other products that enable you to do that, side objectives include:
+
+Have a low setup cost
+Have a low form factor
+Be easily customisable
+Whilst having the complex algorithims we desire, also being simple enough to use without a PC
+Scalabilty
+Weather compensation
 
 Description
 ---------------------
@@ -38,5 +54,6 @@ Contact
 
 Thanks
 ---------------------
+- [RaspberryPi](http://www.raspberrypi.org) - For making it possible.
 - [Bootstrap](https://github.com/twbs/bootstrap) - For making things look good.
 - [WiringPi](https://github.com/WiringPi) - For making it easy to use the GPIO pins.
