@@ -5,19 +5,19 @@ heating system controller, designed to run on the Raspberry Pi.
 
 Objectives
 ---------------------
-Our key objectives of the PiCH project are 
+Our key objectives of the PiCH project are :
 
-To be able to control your heating from anywhere and
-Being able to define which area you want to be heat at a given time.
+- To be able to control your heating from anywhere and
+- Being able to define which area you want to be heat at a given time.
 
-Obviously there are other products that enable you to do that, side objectives include:
+Obviously there are other products that enable you to do this, side objectives include:
 
-Have a low setup cost
-Have a low form factor
-Be easily customisable
-Whilst having the complex algorithims we desire, also being simple enough to use without a PC
-Scalabilty
-Weather compensation
+- Low setup cost
+- Small form factor
+- Easily customisable
+- Simple enough to use without a PC
+- Scalable to lots of sensors
+- Weather compensation
 
 Description
 ---------------------
