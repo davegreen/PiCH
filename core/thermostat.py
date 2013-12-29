@@ -19,6 +19,23 @@ SCHEDULEID = sys.argv[1]
 io = wiringpi.GPIO(wiringpi.GPIO.WPI_MODE_SYS)
 io.pinMode(settings.ThermPin,io.OUTPUT)
 
+
+def UpdateHeatingStatus(status):
+        db = MySQLdb.connect(host=settings.SQLSERVER,user=settings.SQLUSER,passwd=settings.SQLPASS,db=settings.SQLDB,port=settings.SQLPORT )
+        cursor = db.cursor()
+        #writing out the devid of the sensors, trys to update first, in the case of a dead sensor coming back online.
+        
+        try:
+                sql = "INSERT INTO `status` (`status`) VALUES ('" + status + "');"
+                cursor.execute(sql)
+                db.commit()
+                
+        except:
+        	db.rollback
+        
+        db.close
+
+
 def RetrieveSQLOffset(devid):
 	db = MySQLdb.connect(host=settings.SQLSERVER,user=settings.SQLUSER,passwd=settings.SQLPASS,db=settings.SQLDB,port=settings.SQLPORT)
 	cursor = db.cursor()
@@ -109,6 +126,7 @@ b = True
 
 while b == True:
 	update_SQL()	
+	UpdateHeatingStatus(1)
 	print "target temp " + str(TARGETTEMP) + " current temp " + str(read_temp())
 
 	if float(TARGETTEMP) > float(read_temp()):
@@ -129,3 +147,4 @@ while b == True:
 
 print "switching off the heating now"
 io.digitalWrite(settings.ThermPin,io.LOW)
+UpdateHeatingStatus(0)
