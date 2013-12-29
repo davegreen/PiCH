@@ -21,21 +21,18 @@ io.pinMode(settings.ThermPin,io.OUTPUT)
 
 
 def UpdateHeatingStatus(status):
-        db = MySQLdb.connect(host=settings.SQLSERVER,user=settings.SQLUSER,passwd=settings.SQLPASS,db=settings.SQLDB,port=settings.SQLPORT )
-        cursor = db.cursor()
-        #writing out the devid of the sensors, trys to update first, in the case of a dead sensor coming back online.
-        
-        try:
-                sql = "INSERT INTO `status` (`status`) VALUES ('" + status + "');"
-                cursor.execute(sql)
-                db.commit()
-                
-        except:
-        	db.rollback
-        
-        db.close
-
-
+	db = MySQLdb.connect(host=settings.SQLSERVER,user=settings.SQLUSER,passwd=settings.SQLPASS,db=settings.SQLDB,port=settings.SQLPORT )
+	cursor = db.cursor()
+	
+	try:
+		sql = "INSERT INTO `status` (`status`) VALUES ('" + status + "');"
+		cursor.execute(sql)
+		db.commit()
+	
+	except:
+		db.rollback
+		db.close
+		
 def RetrieveSQLOffset(devid):
 	db = MySQLdb.connect(host=settings.SQLSERVER,user=settings.SQLUSER,passwd=settings.SQLPASS,db=settings.SQLDB,port=settings.SQLPORT)
 	cursor = db.cursor()
