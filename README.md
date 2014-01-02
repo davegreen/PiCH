@@ -42,6 +42,9 @@ If you can't do that, at least [let us know](https://github.com/davegreen/PiCH/t
 - Scheduling and rule creation for heating system control.
 - Easy management of other system settings and features.
 
+![PiCH temperature logging page](http://tookitaway.co.uk/wp-content/uploads/2014/01/templog.png)
+
+
 TODO
 ---------------------
 See the wiki page: https://github.com/davegreen/PiCH/wiki/TODO
