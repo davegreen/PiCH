@@ -136,12 +136,13 @@ while b == True:
 	
 	if datetime.time(datetime.now()) < FINISHTIME:
 		print "time left to run"
-		sleep(2)
 	
 	else:
 		print "time to go :("
 		b = False
-
+	
+	sleep(60)
+	
 print "switching off the heating now"
 io.digitalWrite(settings.ThermPin,io.LOW)
 UpdateHeatingStatus(0)
