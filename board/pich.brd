@@ -117,7 +117,7 @@
 <wire x1="0" y1="80.01" x2="0" y2="56.515" width="0.4064" layer="25"/>
 <wire x1="47.9425" y1="-0.3175" x2="47.9425" y2="79.6925" width="0.254" layer="25"/>
 <text x="47.625" y="0" size="1.6764" layer="25" font="fixed" rot="R90">PiCH v1.0.3
-http://davegreen.github.io/pich/
+http://davegreen.github.io/PiCH/
 (c) PiCH 2013</text>
 <text x="42.545" y="46.99" size="0.8128" layer="25" font="fixed" rot="R180">(c) PiCH 2013</text>
 <text x="55.5625" y="15.5575" size="1.778" layer="25" font="fixed" rot="R90">(c) PiCH 2013</text>
