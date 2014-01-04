@@ -62,7 +62,7 @@ There's a few things that need to be done for a successful setup, some of which 
 At the moment, the web interface and the database both require manual setup. This needs a little linux knowledge to do, but isn't too difficult and will be done during the setup process at some point.
 
 The www files need setting up on a web server locally on the Pi, with PHP5.
-The database schema is included in the setup folder. This needs to be MySQL (or compatible) and is connected to by both PHP (in db.php) and python (in settings.py).
+The database schema is included in the setup folder (pich-structure.sql). This needs to be MySQL (or compatible) and is connected to by both PHP (db.php) and Python (settings.py).
 
 Thanks
 ---------------------
