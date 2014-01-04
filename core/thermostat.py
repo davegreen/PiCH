@@ -141,6 +141,8 @@ while b == True:
 		print "time to go :("
 		b = False
 	
+	#Sleep is set to not cause the boiler to flick on and off too quickly.
+	#Lower values have not been tested.
 	sleep(60)
 	
 print "switching off the heating now"
