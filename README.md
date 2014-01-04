@@ -18,6 +18,7 @@ Obviously there are other products that enable you to do this, side objectives i
 - Simple enough to use without a PC
 - Scalable to lots of sensors
 - Weather compensation
+- Temperature history graphing and schedule histories.
 
 Description
 ---------------------
