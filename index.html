@@ -96,6 +96,13 @@ If you can't do that, at least let us know what you would like to see.</p>
 <h2>
 <a name="setting-up" class="anchor" href="#setting-up"><span class="octicon octicon-link"></span></a>Setting Up</h2>
 
+<p>There's a few things that need to be done for a successful setup, some of which is currently covered in the <a href="https://github.com/davegreen/PiCH/blob/master/setup/setup.sh">setup script</a>.</p>
+
+<p>At the moment, the web interface and the database both require manual setup. This needs a little linux knowledge to do, but isn't too difficult and will be done during the setup process at some point.</p>
+
+<p>The www files need setting up on a web server locally on the Pi, with PHP5.
+The database schema is included in the setup folder (pich-structure.sql). This needs to be MySQL (or compatible) and is connected to by both PHP (db.php) and Python (settings.py).</p>
+
 <h2>
 <a name="thanks" class="anchor" href="#thanks"><span class="octicon octicon-link"></span></a>Thanks</h2>
 
