@@ -50,38 +50,65 @@ def error_end(reason):
 	print reason
 	sys.exit()
 
-def read_temp_raw ():
-	try:
-		f = open(settings.base_dir + DEVID + settings.device_file, 'r')
-		lines = f.readlines()
-		f.close()
-		return lines
-	
-	except:
-		error_end("sensor dead")
-	
-def read_temp ():
-	lines = read_temp_raw()
-	i = 0
-	
-	while lines[0].strip()[-3:] != 'YES':
-		sleep(0.2)
-		lines = read_temp_raw()
-		
-		if i > 5:
-			error_end("CRC Error")
-		
-		else :
-			i = i + 1
+##############################################################################
+#
+#  Legacy function for reading direct from the tempurature sensor
+#  Removed to read from the SQL DB to allow sensor to be located remotly
+#
+##############################################################################
+#
+#def read_temp_raw ():#
+#	try:
+#		f = open(settings.base_dir + DEVID + settings.device_file, 'r')
+#		lines = f.readlines()
+#		f.close()
+#		return lines
+#	
+#	except:
+#		error_end("sensor dead")
+#def read_temp ():
+#	lines = read_temp_raw()
+#	i = 0
+#	
+#	while lines[0].strip()[-3:] != 'YES':
+#		sleep(0.2)
+#		lines = read_temp_raw()
+#		
+#		if i > 5:
+#			error_end("CRC Error")
+#		
+#		else :
+#			i = i + 1
+#
+#	equals_pos = lines[1].find('t=')
+#	
+#	if equals_pos != -1:
+#		temp_string = lines[1][equals_pos+2:]
+#		offset = RetrieveSQLOffset(DEVID)
+#		temp_c = float(temp_string) / 1000.0
+#		temp_c = temp_c + offset[0]
+#		return temp_c
 
-	equals_pos = lines[1].find('t=')
-	
-	if equals_pos != -1:
-		temp_string = lines[1][equals_pos+2:]
-		offset = RetrieveSQLOffset(DEVID)
-		temp_c = float(temp_string) / 1000.0
-		temp_c = temp_c + offset[0]
-		return temp_c
+
+def read_temp():
+	global DEVID
+
+	#open database connection
+	db = MySQLdb.connect(host=settings.SQLSERVER,user=settings.SQLUSER,passwd=settings.SQLPASS,db=settings.SQLDB,port=settings.SQLPORT )
+
+	# prepare a cursor object using cursor() method
+	cursor = db.cursor()	
+
+	SQL = "SELECT `temperature` FROM `temperature` WHERE `sensor` = '" + DEVID + "' ORDER BY `timestamp` DESC LIMIT 1"
+
+	cursor.execute(SQL)
+	results = cursor.fetchall()
+
+	cursor.close()
+	db.close()
+
+	return results[0][0]
+
 
 def update_SQL():
 	global DEVID
@@ -124,22 +151,17 @@ b = True
 while b == True:
 	update_SQL()	
 	UpdateHeatingStatus(1)
-	print "target temp " + str(TARGETTEMP) + " current temp " + str(read_temp())
 
 	if float(TARGETTEMP) > float(read_temp()):
-		print "temp is too low, switch on"
 		io.digitalWrite(settings.ThermPin,io.HIGH)
 		
 	else:
-		print "Temp is good, switch off"
 		io.digitalWrite(settings.ThermPin,io.LOW)
 	
-	if datetime.time(datetime.now()) < FINISHTIME:
-		print "time left to run"
-	
-	else:
-		print "time to go :("
+	if datetime.time(datetime.now()) > FINISHTIME:
 		b = False
+#	else:#
+	#	b = False
 	
 	#Sleep is set to not cause the boiler to flick on and off too quickly.
 	#Lower values have not been tested.
