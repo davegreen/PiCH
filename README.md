@@ -27,7 +27,7 @@ functionality, like reading and logging temperature. The second part is a web in
 primarily with the user interface and management of the system.
 
 If you have any improvements at all please go ahead and make them, then submit a pull request!
-If you can't do that, at least [let us know](https://github.com/davegreen/PiCH/tree/master#contact) what you would like to see.
+If you can't do that, at least let us know what you would like to see.
 
 ### Core functionality (Python)
 
@@ -45,15 +45,16 @@ If you can't do that, at least [let us know](https://github.com/davegreen/PiCH/t
 
 ![PiCH temperature logging page](http://tookitaway.co.uk/wp-content/uploads/2014/01/templog.png)
 
+### Hardware
+
+![PiCH temperature board](http://tookitaway.co.uk/wp-content/uploads/2014/01/2013tempboard1.jpg)
+![PiCH temperature and breakout board](http://tookitaway.co.uk/wp-content/uploads/2014/01/2013tempboard2.jpg)
 
 TODO
 ---------------------
 See the wiki page: https://github.com/davegreen/PiCH/wiki/TODO
 
 Setting Up
----------------------
-
-Contact
 ---------------------
 
 Thanks
