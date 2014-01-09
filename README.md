@@ -64,6 +64,13 @@ At the moment, the web interface and the database both require manual setup. Thi
 The www files need setting up on a web server locally on the Pi, with PHP5.
 The database schema is included in the setup folder (pich-structure.sql). This needs to be MySQL (or compatible) and is connected to by both PHP (db.php) and Python (settings.py).
 
+Running
+---------------------
+
+Once things are set up, you can run bootscrip.sh to sort things out ready for everything to go, then run watchdog.py to start monitoring. At some point, this will be put into init, so that it starts with the RPi if you want.
+
+thermostat.sh will get run by cron at schedule start (once a schedule has been created in the web interface) and keep running till the schedule is finished. There's currently no way (short of running killtherm.sh) to stop a running schedule (yes, this is another TODO).
+
 Thanks
 ---------------------
 - [RaspberryPi](http://www.raspberrypi.org) - For making it possible.
