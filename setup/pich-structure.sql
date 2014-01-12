@@ -54,6 +54,11 @@ CREATE TABLE IF NOT EXISTS `temperature` (
   KEY `sensor` (`sensor`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+CREATE TABLE IF NOT EXISTS `stats` (
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `value` float NOT NULL,
+  `module` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 ALTER TABLE `rules`
   ADD CONSTRAINT `rules_ibfk_2` FOREIGN KEY (`sensor`) REFERENCES `sensors` (`uid`) ON DELETE CASCADE ON UPDATE CASCADE,
