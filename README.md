@@ -43,12 +43,12 @@ If you can't do that, at least let us know what you would like to see.
 - Scheduling and rule creation for heating system control.
 - Easy management of other system settings and features.
 
-![PiCH temperature logging page](http://tookitaway.co.uk/wp-content/uploads/2014/01/templog.png)
+![PiCH temperature logging page](http://tookitaway.co.uk/assets/img/templog.png)
 
 ### Hardware
 
-![PiCH temperature board](http://tookitaway.co.uk/wp-content/uploads/2014/01/2013tempboard1.jpg)
-![PiCH temperature and breakout board](http://tookitaway.co.uk/wp-content/uploads/2014/01/2013tempboard2.jpg)
+![PiCH temperature board](http://tookitaway.co.uk/assets/img/2013tempboard1.jpg)
+![PiCH temperature and breakout board](http://tookitaway.co.uk/assets/img/2013tempboard2.jpg)
 
 TODO
 ---------------------
